@@ -36,11 +36,11 @@ namespace ImageCutter
             for (int c = 0; c < col; c++)  
                 for (int r = 0; r < row; r++)
                 {
-                    x = r * baseWidth;
+                    x = r * baseWidth; 
                     y = c * baseHeight;
-                    w = (r + 1) * baseWidth;
-                    h = (c + 1) * baseHeight;
-                    Image bitmap = CropImage(new Rectangle (x, y, w, h));
+                    //baseWidth = (r == row - 1)? image.Width : (r + 1) * baseWidth - 1; // + похибка на 1 пиксель при кожній новій колонці/рядку
+                    //baseHeight = (c == col - 1) ? image.Height : (c + 1) * baseHeight - 1;
+                    Image bitmap = CropImage(new Rectangle (x, y, baseWidth, baseHeight));
                     bitmap.Tag = Convert.ToString(c + "_" + r);
                     bitmap.Save(path + "//" + imageName + "_" + c + "_" + r + ".png");
                     bitmaps.Add(bitmap);
