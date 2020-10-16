@@ -31,7 +31,7 @@ namespace ImageCutter
         private void btnOpenFile_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = " file (*.png)|*.png|files (*.jpg)|*.jpg";
+            openFileDialog.Filter = " files (*.jpg)|*.jpg|file (*.png)|*.png";
             openFileDialog.Multiselect = false;
             if (openFileDialog.ShowDialog() == true)
                 programPath.Text = openFileDialog.FileName;
