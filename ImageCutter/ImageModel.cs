@@ -29,8 +29,8 @@ namespace ImageCutter
 
             Rectangle rectangle = new Rectangle(0,0,0,0);
             int x = 0, y = 0, w = 0, h = 0;
-            int baseWidth = image.Width / col;
-            int baseHeight = image.Height / row;
+            int baseWidth = image.Width / row;
+            int baseHeight = image.Height / col ;
             string imageName = path.Split('\\').Last();
 
             for (int c = 0; c < col; c++)  
